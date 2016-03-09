@@ -1,0 +1,11 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+.logo{
+	width: 30vh;
+	height: 30vh;
+	margin-left: 47.5vw;
+}
+#login{
+}

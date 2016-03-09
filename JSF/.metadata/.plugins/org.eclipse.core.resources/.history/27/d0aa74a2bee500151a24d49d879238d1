@@ -1,0 +1,10 @@
+*{
+	margin:20px;
+	padding: 0px;
+}
+.image{
+	margin-left: 500px;
+}
+#login{
+	background: red;
+}

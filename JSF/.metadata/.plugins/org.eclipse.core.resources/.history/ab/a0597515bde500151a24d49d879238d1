@@ -1,0 +1,10 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+.ui-content image{
+	margin-left: 500px;
+}
+#login{
+	background: red;
+}

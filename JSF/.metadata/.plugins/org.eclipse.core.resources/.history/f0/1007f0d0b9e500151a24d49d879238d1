@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+<f:facet name="postinit">
+         <h:outputStylesheet library="css" name="style.css" />
+      </f:facet>
+<c:set var="login" value="#{Context.loginBean}"></c:set>
+<h:head>
+	<h:outputStylesheet library="css" name="styles.css" />
+	<h:outputScript library="js" name="scripts.js" />
+	<link rel="stylesheet"
+		href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script
+		src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</h:head>
+
+<h:body>
+	<pm:page id="login">
+		<pm:content>
+			<h:form>
+				<img class="logo" src="resources/images/logo.png"></img>
+				<p:commandButton value="iniciar" action="#{login.log}" ajax="false"></p:commandButton>
+			</h:form>
+		</pm:content>
+	</pm:page>
+</h:body>
+</html>

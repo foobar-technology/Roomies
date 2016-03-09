@@ -1,0 +1,12 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+.logo{
+	width: 15vw;
+	height: 15vh;
+	margin-left: 47.5vw;
+	margin-right: 47.5vw;
+}
+#login{
+}
