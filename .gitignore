@@ -218,3 +218,4 @@ pip-log.txt
 JSF/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 JSF/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 JSF/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes/savedIndexNames.txt
+*.xmi
