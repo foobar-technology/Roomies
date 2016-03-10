@@ -17,6 +17,8 @@ public class ContextBeans implements Serializable{
 	private Main mainBean;
 	
 	private Login loginBean;
+	
+	private Register registerBean;
 
 	public Main getMainBean() {
 		if (mainBean == null){
@@ -38,6 +40,17 @@ public class ContextBeans implements Serializable{
 
 	public void setLoginBean(Login loginBean) {
 		this.loginBean = loginBean;
+	}
+
+	public Register getRegisterBean() {
+		if (registerBean == null){
+			registerBean = new Register();
+		}
+		return registerBean;
+	}
+
+	public void setRegisterBean(Register registerBean) {
+		this.registerBean = registerBean;
 	}
 	
 }
