@@ -12,7 +12,6 @@
 <f:view renderKitId="PRIMEFACES_MOBILE" />
 <c:set var="login" value="#{Context.loginBean}"></c:set>
 <h:head>
-	<title>Roomies</title>
 
 </h:head>
 <f:facet name="postinit">
@@ -25,22 +24,23 @@
 </f:facet>
 
 <h:body>
-	<pm:page id="login">
+	<pm:page id="register">
 		<pm:content>
 			<h:form>
-				<br />
-				<br />
-				<p:graphicImage styleClass="logo" value="/resources/images/logo.png"></p:graphicImage>
-				<br />
-				<br />
-				<p:inputText placeholder="Correo"></p:inputText>
-				<p:password placeholder="Contraseña"></p:password>
-				<div class="btns-2">
-					<p:commandButton styleClass="size-l ui-btn ui-btn-inline"
-						value="Registrarse" action="#{login.log}" ajax="false"></p:commandButton>
-					<p:commandButton styleClass="size-m ui-btn ui-btn-inline"
-						value="Entrar"></p:commandButton>
+				<h1>Registro</h1>
+				<br></br><br></br>
+				<div id="inputTexts">
+					<p:inputText placeholder="Nombre"></p:inputText>
+					<p:inputText placeholder="Correo"></p:inputText>
+					<p:password placeholder="Contraseña"></p:password>
+					<p:password placeholder="Confirmar contraseña"></p:password>
 				</div>
+				
+				<div id="buttonsDiv"> 
+					<p:commandButton value="Regresar" style="float: left;width: 49%;margin-right: 2%;" styleClass="ui-btn ui-btn-line"></p:commandButton>
+					<p:commandButton value="Aceptar" style="float:left;width: 49%;" styleClass="ui-btn ui-btn-line"></p:commandButton>
+				</div>
+
 			</h:form>
 		</pm:content>
 	</pm:page>

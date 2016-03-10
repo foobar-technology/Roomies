@@ -9,7 +9,7 @@ public class Login extends Form{
 	
 	public String log(){
 		System.out.println("login");
-		return "/pages/main";
+		return "/pages/register";
 	}
 
 }
