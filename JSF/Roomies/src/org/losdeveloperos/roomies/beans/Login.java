@@ -1,4 +1,4 @@
-package org.roomies.beans;
+package org.losdeveloperos.roomies.beans;
 
 public class Login extends Form{
 

@@ -1,4 +1,9 @@
-package org.roomies.beans;
+package org.losdeveloperos.roomies.beans;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.losdeveloperos.roomies.db.AppUser;
 
 public class Register extends Form{
 
@@ -14,6 +19,22 @@ public class Register extends Form{
 	private String password;
 	
 	private String passwordConfirm;
+	
+	private AppUser user;
+	
+	public void registerUser(){ 
+		user = new AppUser();
+		user.setId(1);
+		user.setName(name);
+		user.setEmail(email);
+		user.setPassword(password);
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.save(user);
+		session.getTransaction().commit();
+	}
 	
 	public String goBack(){
 		return ("/index");
@@ -50,7 +71,5 @@ public class Register extends Form{
 	public void setPasswordConfirm(String passwordConfirm) {
 		this.passwordConfirm = passwordConfirm;
 	}
-	
-	
 
 }

@@ -1,4 +1,4 @@
-package org.roomies.beans;
+package org.losdeveloperos.roomies.beans;
 
 import java.io.IOException;
 import java.io.Serializable;
