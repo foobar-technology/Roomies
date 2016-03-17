@@ -33,13 +33,13 @@
 				<p:graphicImage styleClass="logo" value="/resources/images/logo.png"></p:graphicImage>
 				<br />
 				<br />
-				<p:inputText placeholder="Correo"></p:inputText>
-				<p:password placeholder="Contraseña"></p:password>
+				<p:inputText placeholder="Usuario" value="#{login.user}"></p:inputText>
+				<p:password placeholder="Contraseña" value="#{login.password}"></p:password>
 				<div class="btns-2">
 					<p:commandButton styleClass="size-l ui-btn ui-btn-inline"
-						value="Registrarse" action="#{login.log}" ajax="false"></p:commandButton>
+						value="Registrarse" action="#{login.register}" ajax="false"></p:commandButton>
 					<p:commandButton styleClass="size-m ui-btn ui-btn-inline"
-						value="Entrar"></p:commandButton>
+						value="Entrar" action="#{login.log}" ajax="false"></p:commandButton>
 				</div>
 			</h:form>
 		</pm:content>

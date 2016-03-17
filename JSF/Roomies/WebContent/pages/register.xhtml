@@ -27,17 +27,18 @@
 	<pm:page id="register">
 		<pm:content>
 			<h:form>
-				<h1>Registro</h1>
+				<h1 class="header">Registro</h1>
 				<br></br><br></br>
 				<div id="inputTexts">
 					<p:inputText placeholder="Nombre" value="#{reg.name}"></p:inputText>
+					<p:inputText placeholder="Usuario" value="#{reg.userName}"></p:inputText>
 					<p:inputText placeholder="Correo" value="#{reg.email}"></p:inputText>
 					<p:password placeholder="Contraseña" value="#{reg.password}"></p:password>
 					<p:password placeholder="Confirmar contraseña" value="#{reg.passwordConfirm}"></p:password>
 				</div>
 				
 				<div id="buttonsDiv"> 
-					<p:commandButton value="Regresar" action="#{reg.goBack}" style="float: left;width: 49%;margin-right: 2%;" styleClass="ui-btn ui-btn-line"></p:commandButton>
+					<p:commandButton value="Regresar" action="#{reg.goBack}" style="float: left;width: 49%;margin-right: 2%;" styleClass="ui-btn ui-btn-line" ajax="false"></p:commandButton>
 					<p:commandButton value="Aceptar" action="#{reg.registerUser}" style="float:left;width: 49%;" styleClass="ui-btn ui-btn-line"></p:commandButton>
 				</div>
 

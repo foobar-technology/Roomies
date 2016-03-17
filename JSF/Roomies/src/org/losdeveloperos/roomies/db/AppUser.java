@@ -2,6 +2,7 @@ package org.losdeveloperos.roomies.db;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -12,10 +13,14 @@ import javax.persistence.Id;
 public class AppUser {
 	@Id
 	@Column (name="APU_ID")
-	private int id;
+	@GeneratedValue
+	private long id;
 	
 	@Column (name="APU_NAME")
 	private String name;
+	
+	@Column (name="APU_USER")
+	private String user;
 	
 	@Column (name="APU_EMAIL")
 	private String email;
@@ -24,10 +29,10 @@ public class AppUser {
 	private String password;
 	
 	/* Getters and Setters*/
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -47,6 +52,13 @@ public class AppUser {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String getUser() {
+		return user;
+	}
+	public void setUser(String user) {
+		this.user = user;
 	}
 	
 	

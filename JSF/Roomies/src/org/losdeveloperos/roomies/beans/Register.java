@@ -1,9 +1,7 @@
 package org.losdeveloperos.roomies.beans;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.losdeveloperos.roomies.db.AppUser;
+import org.losdeveloperos.roomies.hibernate.HibernateSession;
 
 public class Register extends Form{
 
@@ -14,6 +12,8 @@ public class Register extends Form{
 	
 	private String name;
 	
+	private String userName;
+
 	private String email;
 	
 	private String password;
@@ -22,22 +22,25 @@ public class Register extends Form{
 	
 	private AppUser user;
 	
-	public void registerUser(){ 
-		user = new AppUser();
-		user.setId(1);
-		user.setName(name);
-		user.setEmail(email);
-		user.setPassword(password);
-		
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.save(user);
-		session.getTransaction().commit();
+	public String registerUser(){ 
+		String page;
+		if(password.equals(passwordConfirm)){
+			user = new AppUser();
+			user.setName(name);
+			user.setUser(userName);
+			user.setPassword(String.valueOf(password.hashCode()));
+			user.setEmail(email);
+			
+			HibernateSession.saveObject(user);
+			page = "/index.xhtml";
+		}else{
+			page = "";
+		}
+		return page;
 	}
 	
-	public String goBack(){
-		return ("/index");
+	public void goBack(){
+		redirect ("/index.xhtml");
 	}
 
 	public String getName() {
@@ -70,6 +73,14 @@ public class Register extends Form{
 
 	public void setPasswordConfirm(String passwordConfirm) {
 		this.passwordConfirm = passwordConfirm;
+	}
+	
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 }

@@ -7,9 +7,9 @@ public class Main extends Form{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public String gotoSecond() {
+	public void goSecond() {
 		System.out.println("go to second");
-        return "pm:second";
+        redirect ("/pages/main.xhtml#second");
     }
 	
 	public void print(){

@@ -26,7 +26,7 @@
 		<pm:header title="Page 1"></pm:header>
 		<pm:content>
 			<h:form>
-				<p:button outcome="pm:second" value="Ajax Action" />
+				<p:commandButton value="boton" action="#{main.goSecond}" ajax="false"></p:commandButton>
 			</h:form>
 		</pm:content>
 	</pm:page>
@@ -36,7 +36,7 @@
 
 		<pm:content>
 			<p>Page 2 content.</p>
-			<p:button outcome="pm:first" value="Go Back" />
+			<p:button href="/pages/main.xhtml#first" value="Go Back" />
 		</pm:content>
 	</pm:page>
  
