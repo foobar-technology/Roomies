@@ -26,7 +26,11 @@
 		<pm:header title="Page 1"></pm:header>
 		<pm:content>
 			<h:form>
+				<h:outputText id="textUser" value="#{main.user}"></h:outputText>
 				<p:commandButton value="boton" action="#{main.goSecond}" ajax="false"></p:commandButton>
+				<p:commandButton value="set nombre" action="#{main.getValue}">
+					<p:ajax update="textUser"></p:ajax>
+				</p:commandButton>
 			</h:form>
 		</pm:content>
 	</pm:page>
