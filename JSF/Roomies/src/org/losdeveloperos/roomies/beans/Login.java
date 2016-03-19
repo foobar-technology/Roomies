@@ -14,6 +14,7 @@ public class Login extends Form{
 	
 	/* Metodos de la clase*/
 	public void log(){
+		
 		System.out.println("login");
 		redirect ("/pages/main.xhtml");
 	}
