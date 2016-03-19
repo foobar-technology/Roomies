@@ -31,8 +31,4 @@ public class Main extends Form{
 		this.user = user;
 	}
 	
-	public void print(){
-		System.out.println("imprimir valor");
-	}
-	
 }
