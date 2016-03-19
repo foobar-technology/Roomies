@@ -29,19 +29,33 @@
 			<h:form>
 				<p:growl id="growl" showDetail="true" />
 				<h1 class="header">Registro</h1>
-				<br></br><br></br>
-				<div id="inputTexts">
-					<p:inputText placeholder="Nombre" value="#{reg.name}"></p:inputText>
-					<p:inputText placeholder="Usuario" value="#{reg.userName}"></p:inputText>
-					<p:inputText placeholder="Correo" value="#{reg.email}"></p:inputText>
-					<p:password placeholder="Contraseña" value="#{reg.password}"></p:password>
-					<p:password placeholder="Confirmar contraseña" value="#{reg.passwordConfirm}"></p:password>
-				</div>
-				
-				<div id="buttonsDiv"> 
-					<p:commandButton value="Regresar" action="#{reg.goBack}" style="float: left;width: 49%;margin-right: 2%;" styleClass="ui-btn ui-btn-line" ajax="false"></p:commandButton>
-					<p:commandButton value="Aceptar" action="#{reg.registerUser}" style="float:left;width: 49%;" styleClass="ui-btn ui-btn-line"></p:commandButton>
-				</div>
+				<br></br>
+				<br></br>
+				<h:panelGrid style="width:100%" id="grid" columns="2" cellpadding="5">
+					<p:inputText id="name" label="nombre" placeholder="Nombre" required="true" />
+					<p:message for="name" display="icon"/>
+
+					<p:inputText id="user" label="Usuario" placeholder="Usuario" required="true" />
+					<p:message for="user" display="icon" />
+
+					<p:inputText id="email" label="Correo" placeholder="Correo" required="true" />
+					<p:message for="email" display="icon" />
+
+					<p:inputText id="password" label="Contraseña" placeholder="Contraseña" required="true" />
+					<p:message for="password" display="icon" />
+					
+					<p:inputText id="confirm-password" label="Confirmar contraseña" placeholder="Confirmar contraseña" required="true" />
+					<p:message for="confirm-password" display="icon" />
+				</h:panelGrid>
+				<br></br><hr></hr>
+				<h:panelGroup id="buttonsDiv">
+					<p:button value="Regresar" href="/index.xhtml"
+						style="float: left;width: 49%;margin-right: 2%;"
+						styleClass="ui-btn ui-btn-line" ></p:button>
+					<p:commandButton value="Aceptar" action="#{reg.registerUser}"
+						update="growl grid" style="float:left;width: 49%;"
+						styleClass="ui-btn ui-btn-line"></p:commandButton>
+				</h:panelGroup>
 
 			</h:form>
 		</pm:content>

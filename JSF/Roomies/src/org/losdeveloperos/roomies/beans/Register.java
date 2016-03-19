@@ -22,7 +22,7 @@ public class Register extends Form{
 	
 	private AppUser user;
 	
-	public String registerUser(){ 
+	public void registerUser(){ 
 		String page;
 		if(password.equals(passwordConfirm)){
 			user = new AppUser();
@@ -31,15 +31,15 @@ public class Register extends Form{
 			user.setPassword(String.valueOf(password.hashCode()));
 			user.setEmail(email);
 			
-			HibernateSession.saveObject(user);
+			//HibernateSession.saveObject(user);
 			page = "/index.xhtml";
 		}else{
 			page = "";
 		}
-		return page;
 	}
 	
 	public void goBack(){
+		System.out.println("regresar");
 		redirect ("/index.xhtml");
 	}
 

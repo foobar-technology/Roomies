@@ -28,3 +28,9 @@
 .size-m{
 	width: 29% !important;
 }
+hr{
+	height: 4px;
+	background: black;
+	border: 0px;
+	border-radius: 20px;
+}
