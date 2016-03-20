@@ -32,19 +32,19 @@
 				<br></br>
 				<br></br>
 				<h:panelGrid style="width:100%" id="grid" columns="2" cellpadding="5">
-					<p:inputText id="name" label="nombre" placeholder="Nombre" required="true" />
+					<p:inputText id="name" value="#{reg.name}" label="nombre" placeholder="Nombre" required="true" />
 					<p:message for="name" display="icon"/>
 
-					<p:inputText id="user" label="Usuario" placeholder="Usuario" required="true" />
+					<p:inputText id="user" value="#{reg.userName}" label="Usuario" placeholder="Usuario" required="true" />
 					<p:message for="user" display="icon" />
 
-					<p:inputText id="email" label="Correo" placeholder="Correo" required="true" />
+					<p:inputText id="email" value="#{reg.email}" label="Correo" placeholder="Correo" required="true" />
 					<p:message for="email" display="icon" />
 
-					<p:inputText id="password" label="Contraseña" placeholder="Contraseña" required="true" />
+					<p:password id="password" value="#{reg.password}" label="Contraseña" placeholder="Contraseña" required="true" />
 					<p:message for="password" display="icon" />
 					
-					<p:inputText id="confirm-password" label="Confirmar contraseña" placeholder="Confirmar contraseña" required="true" />
+					<p:password id="confirm-password" value="#{reg.passwordConfirm}" label="Confirmar contraseña" placeholder="Confirmar contraseña" required="true" />
 					<p:message for="confirm-password" display="icon" />
 				</h:panelGrid>
 				<br></br><hr></hr>
@@ -54,7 +54,7 @@
 						styleClass="ui-btn ui-btn-line" ></p:button>
 					<p:commandButton value="Aceptar" action="#{reg.registerUser}"
 						update="growl grid" style="float:left;width: 49%;"
-						styleClass="ui-btn ui-btn-line"></p:commandButton>
+						styleClass="ui-btn ui-btn-line" ajax="false"></p:commandButton>
 				</h:panelGroup>
 
 			</h:form>

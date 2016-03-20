@@ -14,7 +14,6 @@ public class AppUserModel {
 		Session session = HibernateSession.getSession();
 		session.beginTransaction();
 		String sql = SQL.getQuery("AppUser", "findByUserName");
-		System.out.println(sql);
 		Query query = session.createQuery(sql);
 		query.setParameter("user", userName);
 		List<AppUser> list = query.list();

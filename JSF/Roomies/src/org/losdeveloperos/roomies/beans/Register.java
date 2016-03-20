@@ -1,7 +1,11 @@
 package org.losdeveloperos.roomies.beans;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 import org.losdeveloperos.roomies.db.AppUser;
 import org.losdeveloperos.roomies.hibernate.HibernateSession;
+import org.losdeveloperos.roomies.model.AppUserModel;
 
 public class Register extends Form{
 
@@ -23,18 +27,23 @@ public class Register extends Form{
 	private AppUser user;
 	
 	public void registerUser(){ 
-		String page;
+		FacesContext context = FacesContext.getCurrentInstance();
 		if(password.equals(passwordConfirm)){
 			user = new AppUser();
 			user.setName(name);
 			user.setUser(userName);
-			user.setPassword(String.valueOf(password.hashCode()));
+			user.setPassword(Integer.toHexString(password.hashCode()));
 			user.setEmail(email);
 			
-			//HibernateSession.saveObject(user);
-			page = "/index.xhtml";
+			if(!AppUserModel.findByUserName(user.getUser()).isEmpty()){
+				context.addMessage(null, new FacesMessage("Error",  "El usuario " + user.getUser() + " ya existe"));
+			}else{
+				context.addMessage(null, new FacesMessage("Registro exitoso",  "El usuario " + user.getUser() + " se registro exitosamente"));
+				HibernateSession.saveObject(user);
+				redirect("/index.xhtml");
+			}
 		}else{
-			page = "";
+			context.addMessage(null, new FacesMessage("Error",  "Las contraseñas no coinciden "));
 		}
 	}
 	

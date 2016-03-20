@@ -1,5 +1,11 @@
 package org.losdeveloperos.roomies.beans;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
+import org.losdeveloperos.roomies.db.AppUser;
+import org.losdeveloperos.roomies.model.AppUserModel;
+
 public class Login extends Form{
 
 	/**
@@ -14,9 +20,19 @@ public class Login extends Form{
 	
 	/* Metodos de la clase*/
 	public void log(){
+		FacesContext context = FacesContext.getCurrentInstance();
+		password = Integer.toHexString(password.hashCode());
+		try{
+			if(password.equals(AppUserModel.findByUserName(user).get(0).getPassword())){
+				System.out.println("login");
+				redirect ("/pages/main.xhtml");
+			}else{
+				context.addMessage(null, new FacesMessage("Error",  "El usuario o contraseña son incorrectos"));
+			}
+		}catch(IndexOutOfBoundsException e){
+			context.addMessage(null, new FacesMessage("Error",  "El usuario no existe"));
+		}
 		
-		System.out.println("login");
-		redirect ("/pages/main.xhtml");
 	}
 	
 	public void register(){
