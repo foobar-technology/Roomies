@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         webView = (WebView)findViewById(R.id.webContent);
-        webView.loadUrl("http://javaapptest.azurewebsites.net/");
+        webView.loadUrl("http://roomiesapp.azurewebsites.net/");
         WebSettings webSettings = webView.getSettings();
 
         webSettings.setJavaScriptEnabled(true);
