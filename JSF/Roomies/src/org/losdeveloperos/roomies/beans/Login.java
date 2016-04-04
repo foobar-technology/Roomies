@@ -27,7 +27,7 @@ public class Login extends Form{
 				System.out.println("login");
 				redirect ("/pages/main.xhtml");
 			}else{
-				context.addMessage(null, new FacesMessage("Error",  "El usuario o contraseña son incorrectos"));
+				context.addMessage(null, new FacesMessage("Error",  "El usuario o password son incorrectos"));
 			}
 		}catch(IndexOutOfBoundsException e){
 			context.addMessage(null, new FacesMessage("Error",  "El usuario no existe"));
