@@ -6,12 +6,12 @@ import java.io.IOException;
 import java.net.URL;
 
 public class SQL {
-	public static String sqlFolder = "src/sql/";
+	public static String sqlFolder = "/org/losdeveloperos/roomies/sqlFiles/";
 	
 	public static String getQuery(String sqlFile, String queryName){
 		String line = null;
 		 		BufferedReader br = null;
-		 		URL path = SQL.class.getResource("/sql/" + sqlFile + ".sql");
+		 		URL path = SQL.class.getResource(sqlFolder + sqlFile + ".sql");
 		 		FileReader fr;
 		 		try{
 		 			fr = new FileReader(path.getPath());
