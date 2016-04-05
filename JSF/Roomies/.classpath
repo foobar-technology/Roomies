@@ -21,10 +21,6 @@
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="com.microsoft.sqljdbc4.DRIVER_JAVAEE6/4.2.6420">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Sql-Server-Driver"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
