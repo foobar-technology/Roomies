@@ -25,7 +25,7 @@ public class Login extends Form{
 		try{
 			if(password.equals(AppUserModel.findByUserName(user).get(0).getPassword())){
 				System.out.println("login");
-				redirect ("/pages/main.xhtml");
+				redirect ("/pages/house.xhtml");
 			}else{
 				context.addMessage(null, new FacesMessage("Error",  "El usuario o password son incorrectos"));
 			}
