@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+<c:set var="main" value="#{Context.mainBean}"></c:set>
+<h:head>
+
+</h:head>
+<f:facet name="postinit">
+	<link rel="stylesheet"
+		href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<h:outputStylesheet library="css" name="styles.css" />
+	<h:outputStylesheet library="css" name="custom-theme.css" />
+	<h:outputStylesheet library="css" name="jquery.mobile.icons.min.css" />
+	<h:outputScript library="js" name="scripts.js" />
+</f:facet>
+<h:body>
+	<pm:page id="first">
+		<pm:header styleClass="head">
+			<p:inputText placeholder="Quien vive contigo?" style="width:85%;margin-left:auto;margin-right:auto;margin-top:4vh"></p:inputText>
+		</pm:header>
+		<pm:content style="background: gray;" styleClass="content">
+			<h:form>
+				<div class="card">
+					<br></br>
+					<p:inputText placeholder="Direccion" style="width:80%;margin-left:auto;margin-right:auto;"></p:inputText>
+					<p:inputText placeholder="Telefono" style="width:80%;margin-left:auto;margin-right:auto;"></p:inputText>
+				</div>
+			</h:form>
+		</pm:content>
+	</pm:page>
+
+	<pm:page id="second">
+		<pm:header title="Page 2"></pm:header>
+
+		<pm:content>
+			<p>Page 2 content.</p>
+			<p:button href="/pages/main.xhtml#first" value="Go Back" />
+		</pm:content>
+	</pm:page>
+
+</h:body>
+</html>

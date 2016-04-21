@@ -7,7 +7,7 @@
     
     <managed-bean>
 		<managed-bean-name>Context</managed-bean-name>
-		<managed-bean-class>org.roomies.beans.ContextBeans</managed-bean-class>
+		<managed-bean-class>org.losdeveloperos.roomies.beans.ContextBeans</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 

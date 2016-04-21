@@ -14,13 +14,31 @@
 <h:head>
 
 </h:head>
-
+<f:facet name="postinit">
+	<link rel="stylesheet"
+		href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<h:outputStylesheet library="css" name="styles.css" />
+	<h:outputStylesheet library="css" name="custom-theme.css" />
+	<h:outputStylesheet library="css" name="jquery.mobile.icons.min.css" />
+	<h:outputScript library="js" name="scripts.js" />
+</f:facet>
 <h:body>
 	<pm:page id="first">
-		<pm:header title="Page 1"></pm:header>
-		<pm:content>
+		<pm:header styleClass="head">
+			<h:panelGroup id="gridProfile" style="margin-left:auto;margin-right:auto;display:in-line">
+				<p:graphicImage styleClass="profile-icon"
+					value="/resources/images/profile_pic-02.png"></p:graphicImage>
+				<p:graphicImage styleClass="profile-icon"
+					value="/resources/images/profile_pic-02.png"></p:graphicImage>
+				<p:graphicImage styleClass="profile-icon"
+					value="/resources/images/profile_pic-02.png"></p:graphicImage>
+				<p:graphicImage styleClass="profile-icon"
+					value="/resources/images/profile_pic-02.png"></p:graphicImage>
+			</h:panelGroup>
+		</pm:header>
+		<pm:content style="background: gray;" styleClass="content">
 			<h:form>
-				<p:button outcome="pm:second" value="Ajax Action" />
+				<div></div>
 			</h:form>
 		</pm:content>
 	</pm:page>
@@ -30,9 +48,9 @@
 
 		<pm:content>
 			<p>Page 2 content.</p>
-			<p:button outcome="pm:first" value="Go Back" />
+			<p:button href="/pages/main.xhtml#first" value="Go Back" />
 		</pm:content>
 	</pm:page>
- 
-    </h:body>
+
+</h:body>
 </html>
