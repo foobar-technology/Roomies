@@ -34,7 +34,7 @@ public class SQL {
 		 			}
 		 			return query;
 		 		}catch(IOException e){
-		 			System.out.println(e.getMessage() + e.getCause().toString());
+		 			//System.out.println(e.getMessage() + e.getCause().toString());
 		 			return "";
 		 		}finally{
 		 			try{
