@@ -6,6 +6,8 @@ import javax.faces.context.FacesContext;
 import org.losdeveloperos.roomies.db.AppUser;
 import org.losdeveloperos.roomies.model.AppUserModel;
 
+import util.SHAHash;
+
 public class Login extends Form{
 
 	/**
@@ -21,9 +23,9 @@ public class Login extends Form{
 	/* Metodos de la clase*/
 	public void log(){
 		FacesContext context = FacesContext.getCurrentInstance();
-		password = Integer.toHexString(password.hashCode());
+		String hashPassword = SHAHash.hash(password);
 		try{
-			if(password.equals(AppUserModel.findByUserName(user).get(0).getPassword())){
+			if(hashPassword.equals(AppUserModel.findByUserName(user).getPassword())){
 				System.out.println("login");
 				redirect ("/pages/house.xhtml");
 			}else{
@@ -32,6 +34,7 @@ public class Login extends Form{
 		}catch(IndexOutOfBoundsException e){
 			context.addMessage(null, new FacesMessage("Error",  "El usuario no existe"));
 		}
+		password = "";
 		
 	}
 	
