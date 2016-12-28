@@ -18,7 +18,7 @@ public class Main extends Form{
     }
 	
 	public void getValue(){
-		AppUser usr = AppUserModel.findByUserName("orlanzo").get(0);
+		AppUser usr = AppUserModel.findByUserName("orlanzo");
 		setUser(usr.getName());
 		System.out.println(usr.getName());
 	}

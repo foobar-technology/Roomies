@@ -37,7 +37,7 @@ public class Register extends Form{
 			user.setPassword(SHAHash.hash(password));
 			user.setEmail(email);
 			
-			if(!AppUserModel.findByUserName(user.getUser()).isEmpty()){
+			if(AppUserModel.findByUserName(user.getUser()) != null){
 				context.addMessage(null, new FacesMessage("Error",  "El usuario " + user.getUser() + " ya existe"));
 			}else{
 				context.addMessage(null, new FacesMessage("Registro exitoso",  "El usuario " + user.getUser() + " se registro exitosamente"));

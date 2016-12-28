@@ -25,7 +25,7 @@ public class Login extends Form{
 		FacesContext context = FacesContext.getCurrentInstance();
 		String hashPassword = SHAHash.hash(password);
 		try{
-			if(hashPassword.equals(AppUserModel.findByUserName(user).get(0).getPassword())){
+			if(hashPassword.equals(AppUserModel.findByUserName(user).getPassword())){
 				System.out.println("login");
 				redirect ("/pages/house.xhtml");
 			}else{
