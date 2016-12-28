@@ -7,6 +7,8 @@ import org.losdeveloperos.roomies.db.AppUser;
 import org.losdeveloperos.roomies.hibernate.HibernateSession;
 import org.losdeveloperos.roomies.model.AppUserModel;
 
+import util.SHAHash;
+
 public class Register extends Form{
 
 	/**
@@ -32,7 +34,7 @@ public class Register extends Form{
 			user = new AppUser();
 			user.setName(name);
 			user.setUser(userName);
-			user.setPassword(Integer.toHexString(password.hashCode()));
+			user.setPassword(SHAHash.hash(password));
 			user.setEmail(email);
 			
 			if(!AppUserModel.findByUserName(user.getUser()).isEmpty()){
@@ -43,7 +45,7 @@ public class Register extends Form{
 				redirect("/index.xhtml");
 			}
 		}else{
-			context.addMessage(null, new FacesMessage("Error",  "Las contraseñas no coinciden "));
+			context.addMessage(null, new FacesMessage("Error",  "Las contraseï¿½as no coinciden "));
 		}
 	}
 	
