@@ -1,0 +1,7 @@
+{
+  "name": "Roomies",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
