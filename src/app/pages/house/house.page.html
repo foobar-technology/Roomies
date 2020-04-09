@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-toolbar color="dark" >
+      <ion-grid>
+        <ion-row>
+          <ion-col></ion-col>
+          <ion-col class="ion-align-self-center">
+            <div style="width: 100%;margin: auto;">
+              <ion-img src="assets/img/profile_pic-02.png" ></ion-img>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <div style="width: 100%;margin: auto;">
+              <ion-img src="assets/img/profile_pic-02.png" ></ion-img>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <div style="width: 100%;margin: auto;">
+              <ion-img src="assets/img/profile_pic-02.png" ></ion-img>
+            </div>
+          </ion-col>
+          
+          <ion-col></ion-col>
+          
+        </ion-row>
+      </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="clickedStar()">
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Nombre de la casa</ion-title>
+  </ion-toolbar>
+  <!-- day tasks -->
+  <ion-card>
+    <ion-card-header>
+      <ion-item >
+        <ion-icon name="calendar-outline" color="danger"></ion-icon>
+        <ion-label style="margin-left: 10px;" color="danger">Martes</ion-label>
+      </ion-item>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-icon src="assets/svgs/ico_basura-02.svg"></ion-icon>
+                <ion-label style="margin-left: 10px;">Orlando Loza</ion-label>
+                <ion-checkbox slot="end"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-icon src="assets/svgs/ico_limpieza-02.svg"></ion-icon>
+                <ion-label style="margin-left: 10px;">Miguel Loza</ion-label>
+                <ion-checkbox slot="end"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-icon src="assets/svgs/ico_agua-02.svg"></ion-icon>
+                <ion-label style="margin-left: 10px;">Erick Acevedo</ion-label>
+                <ion-checkbox slot="end"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-icon src="assets/svgs/ico_dinero_gris-02.svg"></ion-icon>
+                <ion-label style="margin-left: 10px;">Omar Gerardo</ion-label>
+                <ion-checkbox slot="end"></ion-checkbox>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+          <ion-col size="1"> 
+            <div style="width: 100%;">
+              <ion-img src="assets/img/flecha_adelante-02.png" ></ion-img>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Events -->
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-icon src="assets/svgs/ico_evento-02.svg"></ion-icon> 
+        <ion-label style="margin-left: 10px;" color="warning">Eventos</ion-label>
+      </ion-item>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+            <ion-list>
+              <ion-item-sliding>
+                <ion-item>
+                  <ion-label position="floating">Cine a las 4 o que?</ion-label>
+                  <ion-input></ion-input>
+                </ion-item>
+                <ion-item-options side="start">
+                  <ion-item-option  >
+                    <ion-icon slot="icon-only" src="assets/svgs/ico_no-02.svg"></ion-icon>
+                  </ion-item-option>
+                  <ion-item-option >
+                    <ion-icon slot="icon-only" src="assets/svgs/ico_si-02.svg"></ion-icon>
+                  </ion-item-option>
+                  <ion-item-option >
+                    <ion-icon color="warning" slot="icon-only" name="help-outline"></ion-icon>
+                  </ion-item-option>
+                </ion-item-options>
+              </ion-item-sliding>
+            
+              <ion-item-sliding>
+                <ion-item >
+                  <ion-label position="floating">amos al oxxo</ion-label>
+                  <ion-input></ion-input>
+                </ion-item>
+                <ion-item-options side="start">
+                  <ion-item-option (click)="unread(item)">
+                    <ion-button>
+                      <ion-icon slot="start" name="star"></ion-icon>
+                      Left Icon
+                    </ion-button>
+                  </ion-item-option>
+                </ion-item-options>
+              </ion-item-sliding>
+            </ion-list>
+          </ion-col>
+          <ion-col size="1"> 
+            <div style="width: 100%;">
+              <ion-img src="assets/img/flecha_adelante-02.png" ></ion-img>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
